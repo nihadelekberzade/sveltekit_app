@@ -1,7 +1,7 @@
 <script>
 	import { productsStore } from '../../store/products.ts';
-	import ProductList from '../../lib/components/ProductList.svelte';
 	import { cartStore } from '../../store/cart.ts';
+	import ProductList from '$lib/components/ProductList.svelte';
 </script>
 
 <section>
