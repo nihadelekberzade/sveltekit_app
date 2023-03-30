@@ -1,14 +1,17 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vitest/config';
-import baseUrl from './src/utils/constants/baseUrl';
-import run from 'vite-plugin-run';
+import { sveltekit } from '@sveltejs/kit/vite'
+import { defineConfig } from 'vitest/config'
+import run from 'vite-plugin-run'
+import baseUrl from './src/utils/constants/baseUrl'
 
 export default defineConfig({
-	plugins: [sveltekit(),
-		run([{
-			name: 'pocketbase initialization',
-			pattern: ['']
-		}])
+	plugins: [
+		sveltekit(),
+		run([
+			{
+				name: 'pocketbase initialization',
+				pattern: ['']
+			}
+		])
 	],
 	server: {
 		proxy: {
@@ -25,4 +28,4 @@ export default defineConfig({
 		globals: true,
 		setupFiles: 'src/setupTests.ts'
 	}
-});
+})
