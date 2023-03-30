@@ -3,6 +3,8 @@
 	import ProductCard from '$lib/components/ProductCard.svelte';
 
 	export let products: Array<IProduct>;
+
+
 </script>
 
 

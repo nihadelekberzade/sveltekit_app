@@ -1,26 +1,25 @@
 <script lang='ts'>
-
 	import type { IProduct } from '../../store/products';
-	import { addProductToCart, cartStore } from '../../store/cart';
+	import { cartStore } from '../../store/cart';
 
 	export let product: IProduct | null = null;
 	export const productLink = `/products/${product ? product.id : ''}`;
 	$: thisProductInCart = () => {
+		if (!product || !product.id) return null;
 		const _productInCart = $cartStore.products.find((p: IProduct) => p.id === product.id);
-		console.log('thisProductInCart', _productInCart);
 		return _productInCart ? _productInCart.brand : null;
 	};
 
-	const addToCart = () => {
+	const addToCart = async () => {
 		if (!product) return;
-		addProductToCart(product);
+		// addProductToCart(product);
 	};
 
 </script>
 
 <div class='product_card'>
 	<a href={productLink} data-sveltekit-preload-data='hover'>
-		<img alt='thumbnail' src={product.thumbnail} />
+		<img loading='lazy' alt='product thumbnail' src={product.thumbnail} />
 	</a>
 	<a href={productLink} data-sveltekit-preload-data='hover'>
 		<h2>
@@ -36,7 +35,6 @@
 </div>
 
 <style lang='scss'>
-
 
   img {
     max-width: 100%;

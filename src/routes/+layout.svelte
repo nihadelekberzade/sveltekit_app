@@ -1,11 +1,12 @@
 <script>
 	import Header from '$lib/layout/Header.svelte';
 	import '../assets/styles/base.css';
+	// Import the functions you need from the SDKs you need
+
 </script>
 
 <div class='app'>
 	<Header />
-
 	<main>
 		<slot />
 	</main>
