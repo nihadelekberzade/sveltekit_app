@@ -1,0 +1,8 @@
+{
+	"editor.suggest.matchOnWordStartOnly": false,
+	"editor.cursorStyle": "line",
+	"breadcrumbs.enabled": false,
+	"breadcrumbs.showArrays": true,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode"
+}

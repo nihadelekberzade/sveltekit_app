@@ -1,56 +1,33 @@
 <script>
-	import Header from '$lib/layout/Header.svelte';
-	import '../assets/styles/base.css';
+	import Navbar from '$lib/components/Navbar.svelte'
+	import Header from '$lib/layout/Header.svelte'
+	import '../assets/styles/base.scss'
 	// Import the functions you need from the SDKs you need
-
 </script>
 
-<div class='app'>
+<div class="app">
 	<Header />
 	<main>
+		<div class="navbar">
+			<Navbar />
+		</div>
 		<slot />
 	</main>
-
-	<footer>
-		<h1>Footer</h1>
-	</footer>
 </div>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    .app {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    main {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        width: 100%;
-        max-width: 64rem;
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-
-    footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 12px;
-    }
-
-
-    @media (min-width: 480px) {
-        footer {
-            padding: 12px 0;
-        }
-    }
+	main {
+		display: flex;
+		align-items: flex-start;
+		@apply container max-w-5xl px-4;
+	}
+	.navbar {
+		flex-basis: 275px;
+		min-width: 275px;
+	}
+	@media (min-width: 480px) {
+		footer {
+			padding: 12px 0;
+		}
+	}
 </style>

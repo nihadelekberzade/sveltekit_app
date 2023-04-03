@@ -1,13 +1,13 @@
+<script>
+	import { productsStore } from '../../store/products'
+	import ProductList from '$lib/components/ProductList.svelte'
+</script>
+
 <svelte:head>
 	<title>Products</title>
 </svelte:head>
 
-<script>
-	import { productsStore } from '../../store/products.ts';
-	import ProductList from '$lib/components/ProductList.svelte';
-</script>
-
 <section>
-	<h1>All Products</h1>
+	<h1 class="text-2xl text-center mb-8 font-bold">All products</h1>
 	<ProductList products={$productsStore.products} />
 </section>
